@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import HeroSection from './sections/HeroSection';
 import AboutMe from './sections/AboutMe';
@@ -10,17 +9,11 @@ import ProjectsSection from './sections/ProjectsSection';
 import CertificatesSection from './sections/CertificatesSection';
 import ContactSection from './sections/ContactSection';
 import BlogSection from './sections/BlogSection';
-import GitHubProjectsSection from './sections/GitHubProjectsSection';
 import BlogPost from './pages/BlogPost';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
 import { getLayoutConfig } from './lib/contentLoader';
-import { pages } from './content/data';
-import PageBuilder from './components/PageBuilder';
 import Admin from './pages/Admin';
-import Chatbot from './components/Chatbot';
-import RecruiterAssistant from './components/RecruiterAssistant';
-import ResumeGenerator from './components/ResumeGenerator';
 
 const SECTION_REGISTRY = {
   hero: { component: HeroSection, label: 'Home', href: '#home' },
@@ -31,22 +24,11 @@ const SECTION_REGISTRY = {
   certificates: { component: CertificatesSection, label: 'Certificates', href: '#certificates' },
   blog: { component: BlogSection, label: 'Blog', href: '#blog' },
   contact: { component: ContactSection, label: 'Contact', href: '#contact' },
-  github: { component: GitHubProjectsSection, label: 'GitHub', href: '#github' },
 };
 
 const DEFAULT_SECTION_ORDER = Object.keys(SECTION_REGISTRY);
 
 const Home = ({ layout }) => {
-  // If page builder is used for home
-  if (pages.home && pages.home.blocks) {
-    return (
-      <main className="container mx-auto px-4 py-8">
-        <PageBuilder blocks={pages.home.blocks} />
-      </main>
-    );
-  }
-
-  // Fallback to section-based layout
   const sections = layout?.sections ?? DEFAULT_SECTION_ORDER;
   const enabled = layout?.enabled ?? {};
 
@@ -89,10 +71,6 @@ function App() {
             <Route path="*" element={<Home layout={layout} />} />
           </Routes>
           <Footer />
-          <Chatbot />
-          <RecruiterAssistant />
-          <ResumeGenerator />
-          <Analytics />
         </div>
       </Router>
     </ThemeProvider>

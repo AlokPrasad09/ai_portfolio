@@ -26,13 +26,12 @@ collections:
         name: "layout"
         file: "content/layout/layout.json"
         fields:
-          - {label: "Section Order", name: "sections", widget: "list", field: {label: "Section", name: "section", widget: "select", options: ["hero", "about", "skills", "tech", "projects", "github", "certificates", "blog", "contact"]}}
+          - {label: "Section Order", name: "sections", widget: "list", field: {label: "Section", name: "section", widget: "select", options: ["hero", "about", "skills", "tech", "projects", "certificates", "blog", "contact"]}}
           - {label: "Hero Enabled", name: "enabled.hero", widget: "boolean", default: true}
           - {label: "About Enabled", name: "enabled.about", widget: "boolean", default: true}
           - {label: "Skills Enabled", name: "enabled.skills", widget: "boolean", default: true}
           - {label: "Tech Stack Enabled", name: "enabled.tech", widget: "boolean", default: true}
           - {label: "Projects Enabled", name: "enabled.projects", widget: "boolean", default: true}
-          - {label: "GitHub Projects Enabled", name: "enabled.github", widget: "boolean", default: true}
           - {label: "Certificates Enabled", name: "enabled.certificates", widget: "boolean", default: true}
           - {label: "Blog Enabled", name: "enabled.blog", widget: "boolean", default: true}
           - {label: "Contact Enabled", name: "enabled.contact", widget: "boolean", default: true}
@@ -49,7 +48,6 @@ collections:
           - {label: "Tagline", name: "tagline", widget: "text"}
           - {label: "Profile Image", name: "profile_image", widget: "image", allow_multiple: false}
           - {label: "Animation", name: "animation", widget: "select", options: ["particles", "aurora", "gradientWave", "techGrid"]}
-          - {label: "GitHub Username", name: "githubUsername", widget: "string"}
 
   - name: "projects"
     label: "Projects"
@@ -99,18 +97,49 @@ collections:
 
   - name: "pages"
     label: "Pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "content/pages/home.json"
-        fields:
-          - label: "Blocks"
-            name: "blocks"
-            widget: "list"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Page Title", name: "title", widget: "string"}
+      - {label: "Blocks", name: "blocks", widget: "list", types:
+          - label: "Text Block"
+            name: "text"
+            widget: "object"
             fields:
-              - {label: "Block Type", name: "type", widget: "select", options: ["text", "image", "video", "project", "skill", "code", "callout"]}
-              - {label: "Content", name: "content", widget: "text", required: false}
-              - {label: "Source/Image", name: "src", widget: "image", required: false}
-              - {label: "Project ID", name: "id", widget: "string", required: false}
-              - {label: "Language", name: "language", widget: "string", required: false}
-              - {label: "Style", name: "style", widget: "select", options: ["info", "warning", "success", "error"], required: false}
+              - {label: "Content", name: "content", widget: "text"}
+          - label: "Image Block"
+            name: "image"
+            widget: "object"
+            fields:
+              - {label: "Image", name: "src", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string"}
+          - label: "Video Block"
+            name: "video"
+            widget: "object"
+            fields:
+              - {label: "Video URL", name: "src", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+          - label: "Project Block"
+            name: "project"
+            widget: "object"
+            fields:
+              - {label: "Project ID", name: "id", widget: "string"}
+          - label: "Skill Block"
+            name: "skill"
+            widget: "object"
+            fields:
+              - {label: "Skill ID", name: "id", widget: "string"}
+          - label: "Code Block"
+            name: "code"
+            widget: "object"
+            fields:
+              - {label: "Language", name: "language", widget: "string"}
+              - {label: "Code", name: "code", widget: "text"}
+          - label: "Callout Block"
+            name: "callout"
+            widget: "object"
+            fields:
+              - {label: "Type", name: "type", widget: "select", options: ["info", "warning", "success", "error"]}
+              - {label: "Content", name: "content", widget: "text"}
+        }

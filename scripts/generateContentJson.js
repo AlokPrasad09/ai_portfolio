@@ -90,7 +90,6 @@ function buildData() {
     blog: [],
     theme: null,
     layout: null,
-    pages: {},
   };
 
   // Theme (single file)
@@ -100,17 +99,6 @@ function buildData() {
   // Layout (single file)
   const layoutFile = path.join(ROOT_CONTENT, 'layout', 'layout.json');
   data.layout = loadJsonFile(layoutFile);
-
-  // Pages (JSON files)
-  const pagesDir = path.join(ROOT_CONTENT, 'pages');
-  if (fs.existsSync(pagesDir)) {
-    const files = fs.readdirSync(pagesDir).filter(f => f.endsWith('.json'));
-    for (const file of files) {
-      const pageName = file.replace('.json', '');
-      const filePath = path.join(pagesDir, file);
-      data.pages[pageName] = loadJsonFile(filePath);
-    }
-  }
 
   // Hero (single file)
   const heroDir = path.join(ROOT_CONTENT, 'hero');
@@ -167,7 +155,6 @@ export const projects = ${JSON.stringify(data.projects, null, 2)};
 export const skills = ${JSON.stringify(data.skills, null, 2)};
 export const certificates = ${JSON.stringify(data.certificates, null, 2)};
 export const blog = ${JSON.stringify(data.blog, null, 2)};
-export const pages = ${JSON.stringify(data.pages, null, 2)};
 `;
 
   fs.writeFileSync(OUT_DATA_FILE, fileContent, 'utf-8');

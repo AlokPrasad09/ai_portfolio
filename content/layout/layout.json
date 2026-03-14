@@ -5,7 +5,6 @@
     "skills",
     "tech",
     "projects",
-    "github",
     "certificates",
     "blog",
     "contact"
@@ -16,7 +15,6 @@
     "skills": true,
     "tech": true,
     "projects": true,
-    "github": true,
     "certificates": true,
     "blog": true,
     "contact": true

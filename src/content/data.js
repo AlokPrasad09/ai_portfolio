@@ -14,7 +14,6 @@ export const layout = {
     "skills",
     "tech",
     "projects",
-    "github",
     "certificates",
     "blog",
     "contact"
@@ -25,7 +24,6 @@ export const layout = {
     "skills": true,
     "tech": true,
     "projects": true,
-    "github": true,
     "certificates": true,
     "blog": true,
     "contact": true
@@ -37,7 +35,6 @@ export const hero = {
   "tagline": "Crafting intelligent experiences with modern AI, clean UX, and production-ready code.",
   "profile_image": "/images/profile.svg",
   "animation": "particles",
-  "githubUsername": "AlokPrasad09",
   "body": "Welcome to the AI Portfolio. Use the CMS to update your hero text, animation, and profile image without changing code."
 };
 export const projects = [
@@ -122,35 +119,3 @@ export const blog = [
     "body": "This blog is powered by Decap CMS and is fully editable through the admin dashboard.\r\n\r\n- Add new posts under **Blog**\r\n- Update the home page content with the **Hero, Projects, Skills,** and **Certificates** sections\r\n- Upload images to **public/images** and use them in your posts"
   }
 ];
-export const pages = {
-  "home": {
-    "blocks": [
-      {
-        "type": "text",
-        "content": "Welcome to my AI Developer Portfolio"
-      },
-      {
-        "type": "image",
-        "src": "/images/profile.png"
-      },
-      {
-        "type": "project",
-        "id": "ncert-ai"
-      },
-      {
-        "type": "skill",
-        "id": "react"
-      },
-      {
-        "type": "code",
-        "content": "console.log('Hello, World!');",
-        "language": "javascript"
-      },
-      {
-        "type": "callout",
-        "content": "This is a callout block for important information",
-        "style": "info"
-      }
-    ]
-  }
-};
