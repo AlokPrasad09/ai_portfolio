@@ -29,6 +29,13 @@ export const layout = {
     "contact": true
   }
 };
+export const about = {
+  "title": "About Me",
+  "description": "I’m an AI developer who builds intelligent applications that solve real problems and delight users. I enjoy turning research into production and designing products that look polished while being powered by modern AI.",
+  "background": "Experience building full-stack applications, machine learning pipelines, and scalable APIs for startups and personal projects.",
+  "interests": "Natural language understanding, generative AI, reinforcement learning, and creating useful assistant experiences.",
+  "experience": "3+ years in AI development, with expertise in Python, React, and cloud platforms."
+};
 export const hero = {
   "name": "Alok Prasad",
   "title": "AI Developer & Product Engineer",

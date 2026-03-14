@@ -84,6 +84,7 @@ function loadJsonFile(filePath) {
 function buildData() {
   const data = {
     hero: null,
+    about: null,
     projects: [],
     skills: [],
     certificates: [],
@@ -99,6 +100,10 @@ function buildData() {
   // Layout (single file)
   const layoutFile = path.join(ROOT_CONTENT, 'layout', 'layout.json');
   data.layout = loadJsonFile(layoutFile);
+
+  // About (single file)
+  const aboutFile = path.join(ROOT_CONTENT, 'about', 'about.json');
+  data.about = loadJsonFile(aboutFile);
 
   // Hero (single file)
   const heroDir = path.join(ROOT_CONTENT, 'hero');
@@ -150,6 +155,7 @@ function writeDataFile(data) {
 
 export const theme = ${JSON.stringify(data.theme, null, 2)};
 export const layout = ${JSON.stringify(data.layout, null, 2)};
+export const about = ${JSON.stringify(data.about, null, 2)};
 export const hero = ${JSON.stringify(data.hero, null, 2)};
 export const projects = ${JSON.stringify(data.projects, null, 2)};
 export const skills = ${JSON.stringify(data.skills, null, 2)};
