@@ -1,0 +1,13 @@
+/* Button Styles */
+.btn-primary {
+  @apply px-4 py-2 rounded-lg bg-gradient-to-r from-gradientDark to-gradientLight text-white font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-gradient-to-l;
+}
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg bg-white text-gradientDark font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:text-white;
+}
+.btn-tertiary {
+  @apply px-4 py-2 rounded-lg bg-gradient-to-r from-gradientLight to-gradientDark text-white font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-gradient-to-l;
+}
+.input {
+  @apply px-4 py-2 rounded-lg bg-glass text-white border border-gradientDark focus:outline-none focus:ring-2 focus:ring-gradientLight transition-all duration-300;
+}

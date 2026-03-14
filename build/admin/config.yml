@@ -1,0 +1,116 @@
+backend:
+  name: github
+  repo: "https://github.com/AlokPrasad09/ai_portfolio.git"  # e.g. "username/ai-portfolio"
+  branch: "main"
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "theme"
+    label: "Theme Settings"
+    files:
+      - label: "Theme Configuration"
+        name: "theme"
+        file: "content/theme/theme.json"
+        fields:
+          - {label: "Primary Color", name: "primaryColor", widget: "color"}
+          - {label: "Background Color", name: "backgroundColor", widget: "color"}
+          - {label: "Card Style", name: "cardStyle", widget: "select", options: ["soft", "elevated", "flat"]}
+          - {label: "Font Scale", name: "fontScale", widget: "number", min: 0.8, max: 1.5, step: 0.1}
+
+  - name: "layout"
+    label: "Layout Settings"
+    files:
+      - label: "Layout Configuration"
+        name: "layout"
+        file: "content/layout/layout.json"
+        fields:
+          - {label: "Section Order", name: "sections", widget: "list", field: {label: "Section", name: "section", widget: "select", options: ["hero", "about", "skills", "tech", "projects", "github", "certificates", "blog", "contact"]}}
+          - {label: "Hero Enabled", name: "enabled.hero", widget: "boolean", default: true}
+          - {label: "About Enabled", name: "enabled.about", widget: "boolean", default: true}
+          - {label: "Skills Enabled", name: "enabled.skills", widget: "boolean", default: true}
+          - {label: "Tech Stack Enabled", name: "enabled.tech", widget: "boolean", default: true}
+          - {label: "Projects Enabled", name: "enabled.projects", widget: "boolean", default: true}
+          - {label: "GitHub Projects Enabled", name: "enabled.github", widget: "boolean", default: true}
+          - {label: "Certificates Enabled", name: "enabled.certificates", widget: "boolean", default: true}
+          - {label: "Blog Enabled", name: "enabled.blog", widget: "boolean", default: true}
+          - {label: "Contact Enabled", name: "enabled.contact", widget: "boolean", default: true}
+
+  - name: "hero"
+    label: "Hero"
+    files:
+      - label: "Hero Content"
+        name: "hero"
+        file: "content/hero/hero.json"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "text"}
+          - {label: "Profile Image", name: "profile_image", widget: "image", allow_multiple: false}
+          - {label: "Animation", name: "animation", widget: "select", options: ["particles", "aurora", "gradientWave", "techGrid"]}
+          - {label: "GitHub Username", name: "githubUsername", widget: "string"}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Project Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Tech Stack", name: "stack", widget: "list", field:
+          {label: "Tech", name: "tech", widget: "string"}}
+      - {label: "GitHub Link", name: "github", widget: "string"}
+      - {label: "Demo Link", name: "demo", widget: "string"}
+      - {label: "Project Image", name: "image", widget: "image", allow_multiple: false}
+
+  - name: "skills"
+    label: "Skills"
+    folder: "content/skills"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Skill Name", name: "name", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Skill Level", name: "level", widget: "string"}
+
+  - name: "certificates"
+    label: "Certificates"
+    folder: "content/certificates"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Certificate Name", name: "name", widget: "string"}
+      - {label: "Issuer", name: "issuer", widget: "string"}
+      - {label: "Year", name: "year", widget: "number"}
+      - {label: "Certificate Image", name: "image", widget: "image", allow_multiple: false}
+
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "image", widget: "image", allow_multiple: false}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/pages/home.json"
+        fields:
+          - label: "Blocks"
+            name: "blocks"
+            widget: "list"
+            fields:
+              - {label: "Block Type", name: "type", widget: "select", options: ["text", "image", "video", "project", "skill", "code", "callout"]}
+              - {label: "Content", name: "content", widget: "text", required: false}
+              - {label: "Source/Image", name: "src", widget: "image", required: false}
+              - {label: "Project ID", name: "id", widget: "string", required: false}
+              - {label: "Language", name: "language", widget: "string", required: false}
+              - {label: "Style", name: "style", widget: "select", options: ["info", "warning", "success", "error"], required: false}

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Theme variables (updated by ThemeProvider) */
+  --color-background: #f8fafc;
+  --color-card: #ffffff;
+  --color-text: #1e293b;
+  --color-accent: #6366f1;
+  --font-scale: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: calc(100% * var(--font-scale));
+}
+
+body {
+  @apply bg-background text-text min-h-screen antialiased;
+}
+
+/* Ensure anchor links don't hide behind the sticky navbar */
+* {
+  scroll-margin-top: 4.5rem;
+}

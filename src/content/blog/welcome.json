@@ -1,0 +1,6 @@
+{
+  "title": "Welcome to My AI Portfolio",
+  "date": "2026-03-14",
+  "image": "/images/blog-cover.svg",
+  "body": "This blog is powered by Decap CMS and is fully editable through the admin dashboard.\r\n\r\n- Add new posts under **Blog**\r\n- Update the home page content with the **Hero, Projects, Skills,** and **Certificates** sections\r\n- Upload images to **public/images** and use them in your posts"
+}

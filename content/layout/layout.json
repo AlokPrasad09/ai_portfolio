@@ -1,0 +1,24 @@
+{
+  "sections": [
+    "hero",
+    "about",
+    "skills",
+    "tech",
+    "projects",
+    "github",
+    "certificates",
+    "blog",
+    "contact"
+  ],
+  "enabled": {
+    "hero": true,
+    "about": true,
+    "skills": true,
+    "tech": true,
+    "projects": true,
+    "github": true,
+    "certificates": true,
+    "blog": true,
+    "contact": true
+  }
+}
