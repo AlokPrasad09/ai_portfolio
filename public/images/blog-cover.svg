@@ -1,35 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    <linearGradient id="coolGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
     </linearGradient>
-    
-    <filter id="dropShadow" x="0" y="0" width="200%" height="200%">
-      <feOffset result="offOut" in="SourceAlpha" dx="3" dy="3" />
-      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="3" />
-      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
 
-  <rect width="800" height="300" rx="15" ry="15" fill="url(#bgGradient)" />
-
-  <circle cx="150" cy="150" r="100" fill="#fff" filter="url(#dropShadow)" stroke="#333" stroke-width="2"/>
-  <text x="150" y="155" font-family="Arial, sans-serif" font-size="20" fill="#333" text-anchor="middle">Photo Here</text>
+  <rect width="800" height="300" rx="20" fill="url(#coolGradient)" />
   
-  <g font-family="Verdana, Geneva, sans-serif" fill="#333">
-    <text x="300" y="90" font-size="36" font-weight="bold">Jane Doe</text>
+  <path d="M600 0 L800 0 L800 300 L700 300 Z" fill="#38bdf8" opacity="0.1" />
+
+  <circle cx="140" cy="150" r="85" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="10,5" />
+  <circle cx="140" cy="150" r="75" fill="#1e293b" />
+  <text x="140" y="155" font-family="monospace" font-size="14" fill="#38bdf8" text-anchor="middle">010101</text>
+  
+  <g font-family="system-ui, sans-serif" fill="#f8fafc">
+    <text x="260" y="110" font-size="42" font-weight="800" letter-spacing="-1">ALOK PRASAD</text>
     
-    <text x="300" y="130" font-size="18" font-weight="bold" fill="#555">Creative Full-Stack Developer</text>
+    <rect x="260" y="130" width="160" height="28" rx="14" fill="#38bdf8" />
+    <text x="340" y="149" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">APP DEVELOPER</text>
     
-    <text x="300" y="170" font-size="14">
-      <tspan x="300" dy="1.2em">Passionate about building intuitive web solutions.</tspan>
-      <tspan x="300" dy="1.2em">I specialize in translating complex ideas into clean,</tspan>
-      <tspan x="300" dy="1.2em">efficient code and beautiful user experiences.</tspan>
-      <tspan x="300" dy="1.2em">Currently exploring AI integration and SVG animations.</tspan>
+    <text x="260" y="190" font-size="16" fill="#94a3b8">
+      <tspan x="260" dy="1.2em">Building high-performance Android applications</tspan>
+      <tspan x="260" dy="1.2em">and intelligent AI-driven solutions.</tspan>
     </text>
   </g>
-  
-  <rect x="300" y="240" width="120" height="35" rx="5" ry="5" fill="#333" />
-  <text x="360" y="263" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">CONTACT ME</text>
+
+  <g transform="translate(260, 250)">
+    <circle cx="0" cy="0" r="15" fill="#334155" />
+    <circle cx="45" cy="0" r="15" fill="#334155" />
+    <circle cx="90" cy="0" r="15" fill="#334155" />
+    <text x="0" y="5" font-family="monospace" font-size="10" fill="#38bdf8" text-anchor="middle">JS</text>
+    <text x="45" y="5" font-family="monospace" font-size="10" fill="#38bdf8" text-anchor="middle">PY</text>
+    <text x="90" y="5" font-family="monospace" font-size="10" fill="#38bdf8" text-anchor="middle">KT</text>
+  </g>
 </svg>
