@@ -1,4 +1,4 @@
-# AI Developer Portfolio for Alok Prasad
+# AI Developer Portfolio
 
 A clean, modern developer portfolio built with **React**, **Tailwind CSS**, and **Framer Motion**.
 
